@@ -1,0 +1,12 @@
+	<div class="blog-masthead">
+	<div class="container">
+	<nav class="blog-nav">
+	  <%= link_to "Home", root_url, class:"blog-nav-item" %>
+	  <%= link_to "Current projects", current_projects_path, class:"blog-nav-item" %>
+	  <%= link_to "About", about_path, class:"blog-nav-item" %>
+	  <% if logged_in? %>
+	  	<%= link_to "Click to log out", logout_path, method: "delete", class:"blog-nav-item" %>
+	  <% end %>
+	</nav>
+	</div>
+	</div>

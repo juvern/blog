@@ -1,0 +1,17 @@
+<div class="container">
+	<h1>New blog post</h1>
+    <%= form_for(@post) do |f| %>
+
+    <div class="form-group">
+	      <%= f.label :title %>
+	      <%= f.text_field :title, class:"form-control"%>
+ 	 </div>
+
+    <div class="form-group">
+	      <%= f.label :body %>
+	      <%= f.text_area :body, size: "60x20", class:"form-control" %>
+	</div>
+
+      <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+    <% end %>
+</div>
