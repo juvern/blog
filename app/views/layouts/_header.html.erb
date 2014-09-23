@@ -1,12 +1,15 @@
-	<div class="blog-masthead">
-	<div class="container">
-	<nav class="blog-nav">
-	  <%= link_to "Home", root_url, class:"blog-nav-item" %>
-	  <%= link_to "Current projects", current_projects_path, class:"blog-nav-item" %>
-	  <%= link_to "About", about_path, class:"blog-nav-item" %>
-	  <% if logged_in? %>
-	  	<%= link_to "Click to log out", logout_path, method: "delete", class:"blog-nav-item" %>
-	  <% end %>
-	</nav>
-	</div>
-	</div>
+<div class="header">
+<ul class="nav nav-pills pull-right">
+	<li class="<%= 'active-underline'  if current_page?('/') %> home"><%= link_to "Home", root_url, class: "yellow" %></li>  	
+	<li class="<%= 'active-underline'  if current_page?('/projects') %>"><%= link_to "Projects", projects_path, class: "green" %></li>
+	<li class="<%= 'active-underline'  if current_page?('/about') %>"><%= link_to "About", about_path, class: "purple" %></li>
+	<li>
+	<% if logged_in? %>
+		<%= link_to "Click to log out", logout_path, method: "delete"%>
+	<% end %>  
+	</li>
+</ul>
+<h3 class="text-muted" id="logo"><%= link_to "Ju-Vern See", root_url %></h3>
+</div>
+
+

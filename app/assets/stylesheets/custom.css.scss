@@ -4,10 +4,16 @@
 /*
  * Globals
  */
+html {
+  position: relative;
+  min-height: 100%;
+}
 
 body {
   font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
   color: #555;
+  padding-top: 20px;
+  margin-bottom: 60px;
 }
 
 h1, .h1,
@@ -34,62 +40,83 @@ h6, .h6 {
 }
 
 
-/*
- * Masthead for nav
- */
-
-.blog-masthead {
-  background-color: #428bca;
-  -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
-          box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
+/* 
+* Custom page header 
+*/
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 30px;
 }
 
-/* Nav links */
-.blog-nav-item {
-  position: relative;
-  display: inline-block;
-  padding: 10px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #cdddeb;
-}
-.blog-nav-item:hover,
-.blog-nav-item:focus {
-  color: #fff;
-  text-decoration: none;
-}
-
-/*
- * Blog name and description
- */
-
-.title {
-  margin-top: 30px;
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  padding-bottom: 19px;
+  margin-top: 0;
   margin-bottom: 0;
-  font-size: 50px;
-  font-weight: normal;
+  line-height: 40px;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
+/* Change colour of linked title */
+h3 a {
+  color: black;
+}
+
+/* Remove rounded corners of nav items */
+.nav-pills li a {
+  border-radius: 0px;
+}
+
+/* Underline nav items if current */
+.active-underline{
+    border-bottom: 5px solid #222;
+}
+
+/* Underline tab was page selected */
+.yellow {
+  background-color: #eec108;
+  color: white;
+}
+
+.purple {
+  background-color: #7e0b1b;
+  color: white;
+}
+
+.green {
+  background-color: #64b822;
+  color: white;
+}
+
+
+#logo {
+  font-size: 30px;
+}
+
+
+/* 
+* Jumbotron 
+*/
+
+.jumbotron {
+  text-align: center;
+  color:white;
+  border-bottom: 1px solid #e5e5e5;
+  background-image: url("sunny.jpeg") 
+}
+.jumbotron .btn {
+  padding: 14px 24px;
+  font-size: 21px;
+}
 
 /*
  * Blog name and description
  */
+
 
 .blog-header {
   padding-top: 20px;
   padding-bottom: 20px;
-}
-.blog-title {
-  margin-top: 30px;
-  margin-bottom: 0;
-  font-size: 50px;
-  font-weight: normal;
-  text-align: right;
-}
-.blog-description {
-  font-size: 20px;
-  color: #999;
-  text-align: right;
 }
 
 
@@ -104,7 +131,7 @@ h6, .h6 {
 
 /* Sidebar modules for boxing content */
 .sidebar-module {
-  padding: 15px;
+  /*padding: 15px;*/
   margin: 0 -15px 15px;
 }
 .sidebar-module-inset {
@@ -151,16 +178,17 @@ h6, .h6 {
 
 
 /*
- * Footer
+ * Sticky Footer
  */
 
 .blog-footer {
-  padding: 40px 0;
-  color: #999;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
   text-align: center;
-  background-color: #f9f9f9;
-  border-top: 1px solid #e5e5e5;
+  background-color: #f5f5f5;
 }
 .blog-footer p:last-child {
-  margin-bottom: 0;
+  margin: 20px 0;
 }

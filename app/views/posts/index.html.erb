@@ -1,25 +1,21 @@
-<div class="container">
-  <%= render 'layouts/title' %>
-  <div class="row">
-    <div class="col-sm-8 blog-main">
 
-      <!-- Post Content -->
-      <div class="blog-post">
-      	<% @posts.each do |post| %>
-        	<h2 class="blog-post-title"><%= post.title %></h2>
-    		<p class="blog-post-meta"><%= post.created_at.strftime("%e %B %Y") %></p>
-        	<p><%= post.body.html_safe %></p>
-        	<br>
-        	<hr>
-        <% end %>
-      </div><!-- /.blog-post -->
+<%= render 'layouts/title' %>
 
-      <%= will_paginate %>	  
+<div class="col-sm-8 blog-main">
 
-    </div><!-- /.blog-main -->
+  <!-- Post Content -->
+  <div class="blog-post">
+  	<% @posts.each do |post| %>
+    	<h2 class="blog-post-title"><%= post.title %></h2>
+		<p class="blog-post-meta"><%= post.created_at.strftime("%e %B %Y") %></p>
+    	<p><%= post.body.html_safe %></p>
+    	<br>
+    	<hr>
+    <% end %>
+  </div><!-- /.blog-post -->
 
+  <%= will_paginate %>	  
 
-    <%= render 'layouts/sidebar' %>
+</div><!-- /.blog-main -->
 
-  </div><!-- /.row-->
-</div><!-- /.container -->
+<%= render 'layouts/sidebar' %>

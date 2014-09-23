@@ -6,7 +6,7 @@ Blog::Application.routes.draw do
   get    'login'    => 'sessions#new'
   delete 'logout'   => 'sessions#destroy'
 
-  get    'current_projects'    => 'pages#project'
+  get    'projects'    => 'pages#project'
   get    'about'    => 'pages#about'
 
   # The priority is based upon order of creation: first created -> highest priority.

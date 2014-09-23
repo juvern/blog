@@ -1,16 +1,21 @@
-<div class="col-sm-8 blog-main">
+<% provide(:title, @post.title) %>
+<br>
+<br>
 
-  <div class="blog-post">
-    <h2 class="blog-post-title"><%= @post.title %></h2>
-    <p class="blog-post-meta"><%= @post.created_at.strftime("%e %B %Y") %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 blog-main">
 
-    <p><%= @post.body.html_safe %></p>
+      <!-- Post Content -->
+      <div class="blog-post">
+        	<h2 class="blog-post-title"><%= @post.title %></h2>
+    		<p class="blog-post-meta"><%= @post.created_at.strftime("%e %B %Y") %></p>
+        	<p><%= @post.body.html_safe %></p>
+      </div><!-- /.blog-post --> 
 
-  </div><!-- /.blog-post -->
-
-</div><!-- /.blog-main -->
-
-<%= render 'layouts/sidebar' %>
+    </div><!-- /.blog-main -->
 
 
 
+  </div><!-- /.row-->
+</div><!-- /.container -->
