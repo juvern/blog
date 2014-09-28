@@ -6,12 +6,29 @@
   <!-- Post Content -->
   <div class="blog-post">
   	<% @posts.each do |post| %>
-    	<h2 class="blog-post-title"><%= post.title %></h2>
-		<p class="blog-post-meta"><%= post.created_at.strftime("%e %B %Y") %></p>
+    	<h3 class="blog-post-title"><%= link_to post.title, post_path(post)  %></h3>
+		  <p class="blog-post-meta"><%= post.created_at.strftime("%e %B %Y") %></p>
     	<p><%= post.body.html_safe %></p>
-    	<br>
+
+      <p><%= link_to post.title, post_path(post, anchor: "disqus_thread")  %></p>
     	<hr>
+      <br>      
     <% end %>
+
+<!-- Disqus comment counts -->
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'juvern'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script> <!-- /Disqus comment -->
+
   </div><!-- /.blog-post -->
 
   <%= will_paginate %>	  

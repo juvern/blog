@@ -12,6 +12,12 @@
 	      <%= f.text_area :body, size: "60x20", class:"form-control" %>
 	</div>
 
-      <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
-    <% end %>
+    <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+
+	<% if params[:action] == "edit" %>
+	   	<%= link_to "Delete", @post, method: :delete, data: { confirm: "You sure?" }, :action => 'edit', class: "btn btn-large btn-primary" %>
+	<% end %>
+
+    <% end %> <!-- /form_for -->
+
 </div>
