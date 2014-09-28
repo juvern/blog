@@ -4,7 +4,7 @@
 <div class="col-sm-8 blog-main">
 
   <!-- Post Content -->
-  <div class="blog-post">
+  <div class="blog-post" data-no-turbolink>
   	<% @posts.each do |post| %>
     	<h3 class="blog-post-title"><%= link_to post.title, post_path(post)  %></h3>
 		  <p class="blog-post-meta"><%= post.created_at.strftime("%e %B %Y") %></p>
